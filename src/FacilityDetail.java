@@ -2,51 +2,51 @@ public class FacilityDetail extends Facility
 {
 	private String name;
 	private String address;
-	private int phoneNumber;
+	private int phone;
 	private int numRooms;
 	
+	//Default constructor
 	public FacilityDetail()
 	{
-		
 	}
 	
-	public Object getName()
+	public String getName()
 	{
-
+		return name;
 	}
 	
-	public Object setName() 
+	public void setName(String name) 
 	{
-
+		this.name = name;
 	}
 
-	public Object getAddress() 
+	public String getAddress() 
 	{
-
-	}
-	
-	public Object setAddress() 
-	{
-
+		return address;
 	}
 	
-	public Object getRooms() 
+	public void setAddress(String address) 
 	{
-
+		this.address = address;
 	}
 	
-	public Object setRooms() 
+	public int getNumRooms() 
 	{
-
+		return numRooms;
 	}
 	
-	public Object getPhoneNumber() 
+	public void setNumRooms(int numRooms) 
 	{
-
+		this.numRooms = numRooms;
 	}
 	
-	public Object setPhoneNumber() 
+	public int getPhoneNumber() 
 	{
-
+		return phone;
+	}
+	
+	public void setPhoneNumber(int phone) 
+	{
+		this.phone = phone;
 	}
 }
