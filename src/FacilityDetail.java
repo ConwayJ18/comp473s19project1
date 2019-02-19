@@ -3,7 +3,7 @@ public class FacilityDetail extends Facility
 	private String name;
 	private String address;
 	private int phone;
-	private int numRooms;
+	private int capacity;
 	
 	//Default constructor
 	public FacilityDetail()
@@ -11,12 +11,12 @@ public class FacilityDetail extends Facility
 	}
 	
 	//Full constructor
-	public FacilityDetail(String name, String address, int phone, int numRooms)
+	public FacilityDetail(String name, String address, int phone, int capacity)
 	{
 		this.name = name;
 		this.address = address;
 		this.phone = phone;
-		this.numRooms = numRooms;
+		this.capacity = capacity;
 	}
 	
 	public String getName()
@@ -39,14 +39,14 @@ public class FacilityDetail extends Facility
 		this.address = address;
 	}
 	
-	public int getNumRooms() 
+	public int getCapacity() 
 	{
-		return numRooms;
+		return capacity;
 	}
 	
-	public void setNumRooms(int numRooms) 
+	public void setCapacity(int capacity) 
 	{
-		this.numRooms = numRooms;
+		this.capacity = capacity;
 	}
 	
 	public int getPhoneNumber() 
