@@ -1,40 +1,51 @@
 public class Inspection
 {
 
-	private int facility_ID;
-	private String inspection_type;
-	private String inspection_detail;
+	private int facilityID;
+	private String inspectType;
+	private String inspectDetail;
 	
-	public Inspection() {}
-
-	public Object getInspection_type() 
+	//Default constructor
+	public Inspection()
 	{
-
 	}
 
-	public Object setInspection_type() 
+	//Full constructor
+	public Inspection(int id, String type, String detail)
 	{
-
+		this.facilityID = id;
+		this.inspectType = type;
+		this.inspectDetail = detail;
+	}
+	
+	public String getInspectionType() 
+	{
+		return inspectType;
 	}
 
-	public Object getInspection_detail() 
+	public void setInspectionType(String type) 
 	{
-
+		this.inspectType = type;
 	}
 
-	public Object setInspection_detail()
+	public String getInspectionDetail() 
 	{
-
+		return inspectDetail;
 	}
 
-	public Object getFacility_ID()
+	public void setInspectionDetail(String detail)
 	{
-
+		this.inspectDetail = detail;
 	}
 
-	public Object setFacility_ID()
+	public int getFacilityID()
 	{
+		return facilityID;
+	}
 
+	public void setFacilityID(int id)
+	{
+		this.facilityID = id;
 	}
 	
 }
