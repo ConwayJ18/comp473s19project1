@@ -10,6 +10,15 @@ public class FacilityDetail extends Facility
 	{
 	}
 	
+	//Full constructor
+	public FacilityDetail(String name, String address, int phone, int numRooms)
+	{
+		this.name = name;
+		this.address = address;
+		this.phone = phone;
+		this.numRooms = numRooms;
+	}
+	
 	public String getName()
 	{
 		return name;
