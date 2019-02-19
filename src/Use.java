@@ -1,43 +1,53 @@
+import java.time.LocalDate;
+
 public class FacilityUse extends Facility
 {
 	
-	private int roomNumber;
-	private LocalDate startDate;
-	private LocalDate endDate;
+	private int roomNum;
+	private LocalDate start;
+	private LocalDate end;
 
+	//Default constructor
 	public FacilityUse()
 	{
-		
 	}
 	
-	public Object getRoomNumber()
+	//Full constructor
+	public FacilityUse(int roomNum, LocalDate start, LocalDate end)
 	{
-
+		this.roomNum = roomNum;
+		this.start = start;
+		this.end = end;
+	}
+	
+	public int getRoomNumber()
+	{
+		return roomNum;
 	}
 
-	public Object setRoomNumber()
+	public void setRoomNumber(int roomNum)
 	{
-
+		this.roomNum = roomNum;
 	}
 
-	public Object getStartDate() 
+	public LocalDate getStartDate() 
 	{
-
+		return start;
 	}
 
-	public Object setStartDate()
+	public void setStartDate(LocalDate start)
 	{
-
+		this.start = start;
 	}
 
-	public Object getEndDate() 
+	public LocalDate getEndDate() 
 	{
-
+		return end;
 	}
 
-	public Object setEndDate()
+	public void setEndDate(LocalDate end)
 	{
-
+		this.end = end;
 	}
 
 }
