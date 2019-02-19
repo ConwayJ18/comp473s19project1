@@ -1,106 +1,51 @@
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Campus
 {
+	public Map<Integer, Facility> FacilitiesList;
 	
 	Campus()
 	{
-		
+		this.FacilitiesList = new HashMap<Integer, Facility>();
 	}
 	
-	public Object listFacilities()
+	public void addNewFacility(Facility facility)
 	{
-		
+		FacilitiesList.put(facility.getFacilityID(), facility);
 	}
 	
-	public Object getFacilityInformation()
+	public Facility getFacilityInformation(int facilityID)
 	{
-		
+		return FacilitiesList.get(facilityID).getDetailsAboutFacility();
 	}
 	
-	public Object requestAvailableCapacity()
+	public void removeFacility(int id) 
 	{
-		
+		FacilitiesList.remove(id);
 	}
 	
-	public Object addNewFacility()
+	public void addFacilityDetail(int facilityID, String name, String address, int phone, int capacity)
 	{
-		
+		FacilitiesList.get(facilityID).setDetailsAboutFacility(new FacilityDetail(name, address, phone, capacity));
 	}
 	
-	public Object addFacilityDetail()
+	public List<Facility> listFacilities()
 	{
-
+		List<Facility> facilities = new ArrayList<Facility>();
+		
+		for(Integer facilityID : FacilitiesList.keySet())
+		{
+			 facilities.add(FacilitiesList.get(facilityID));
+		}
+		
+		return facilities;
 	}
 	
-	public Object removeFacility() 
+	public int requestAvailableCapacity(Facility facility)
 	{
-		
-	}
-	
-	public Object isInUseDuringInterval()
-	{
-		
-	}
-	
-	public Object assignFacilityToUse()
-	{
-		
-	}
-	
-	public Object vacateFacility()
-	{
-		
-	}
-	
-	public Object listInspections()
-	{
-		
-	}
-	
-	public Object listActualUsage()
-	{
-		
-	}
-	
-	public Object calcUsageRate()
-	{
-		
-	}
-	
-	public Object scheduleMaintenance()
-	{
-		
-	}
-	
-	public Object calcMaintenanceCostForFacility()
-	{
-		
-	}
-	
-	public Object calcProblemRateForFacility()
-	{
-		
-	}
-	
-	public Object calcDownTimeForFacility()
-	{
-		
-	}
-	
-	public Object listMaintRequests()
-	{
-		
-	}
-	
-	public Object listMaintenance()
-	{
-		
-	}
-	
-	public Object listFacilityProblems()
-	{
-		
+		return facility.getDetailsAboutFacility().getCapacity();
 	}
 }
