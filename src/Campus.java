@@ -3,48 +3,104 @@ import java.util.Map;
 
 public class Campus
 {
-	int id = 1;
-	Map<Integer, Facility> FacilitiesList = new HashMap<Integer, Facility>();
 	
-	public Facility addNewFacility()
+	Campus()
 	{
-		FacilitiesList.put(id++, new Facility(id));
-		return FacilitiesList.get(id-1).getFacilityInformation();
-	}
-	
-	public Facility removeFacility(int facilityID) 
-	{
-		FacilitiesList.remove(facilityID);
-		return FacilitiesList.get(facilityID).getFacilityInformation();
-	}
-			
-	public int[] listFacilities()
-	{
-		int[] facilities = new int[FacilitiesList.size()];
-		int i=0;
 		
-		for(Integer facilityID : FacilitiesList.keySet())
-		{
-			 facilities[i] = facilityID;
-			 i++;
-		}
+	}
+	
+	public Object listFacilities()
+	{
 		
-		return facilities;
 	}
 	
-	public void addFacilityDetail(int facilityID, String facilityName, int facilityCapacity)
+	public Object getFacilityInformation()
 	{
-		FacilitiesList.get(facilityID).addFacilityDetail(facilityName, facilityCapacity);
+		
 	}
 	
-	public Facility getFacilityInformation(int facilityID)
+	public Object requestAvailableCapacity()
 	{
-		return FacilitiesList.get(facilityID).getFacilityInformation();
+		
 	}
 	
-	public int requestAvailableCapacity(int facilityID)
+	public Object addNewFacility()
 	{
-		return FacilitiesList.get(facilityID).requestAvailableCapacity();
+		
 	}
 	
+	public Object addFacilityDetail()
+	{
+
+	}
+	
+	public Object removeFacility() 
+	{
+		
+	}
+	
+	public Object isInUseDuringInterval()
+	{
+		
+	}
+	
+	public Object assignFacilityToUse()
+	{
+		
+	}
+	
+	public Object vacateFacility()
+	{
+		
+	}
+	
+	public Object listInspections()
+	{
+		
+	}
+	
+	public Object listActualUsage()
+	{
+		
+	}
+	
+	public Object calcUsageRate()
+	{
+		
+	}
+	
+	public Object scheduleMaintenance()
+	{
+		
+	}
+	
+	public Object calcMaintenanceCostForFacility()
+	{
+		
+	}
+	
+	public Object calcProblemRateForFacility()
+	{
+		
+	}
+	
+	public Object calcDownTimeForFacility()
+	{
+		
+	}
+	
+	public Object listMaintRequests()
+	{
+		
+	}
+	
+	public Object listMaintenance()
+	{
+		
+	}
+	
+	public Object listFacilityProblems()
+	{
+		
+	}
 }
