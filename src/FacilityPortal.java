@@ -2,7 +2,7 @@ import java.util.List;
 
 public class FacilityPortal 
 {
-	private Campus facilityCampus = new Campus();
+	private FacilityCampus facilityCampus = new FacilityCampus();
 	
 	//Insert a new facility in the DB
 	public void addNewFacility(Facility facility)
