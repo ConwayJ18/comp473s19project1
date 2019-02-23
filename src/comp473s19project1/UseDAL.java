@@ -4,10 +4,32 @@ import java.util.ArrayList;
 
 public class UseDAL
 {
-	//TODO
-	public Object isInUseDuringInterval(Facility f, Date d, Time start, Time end)
+	public boolean isInUseDuringInterval(Facility f, Date d, Time start, Time end)
 	{
-		return null;
+		Slot comp = new Slot(d, start, end);
+		for(Slot s : Database.db.get(f).getFacilityUse().getSchedule().getSchedule().values())
+		{
+			if(s.overlaps(comp))
+			{
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	public boolean isInUseDuringInterval(Facility f, Days d, Time start, Time end)
+	{
+		Slot comp = new Slot(d, start, end);
+		for(Slot s : Database.db.get(f).getFacilityUse().getSchedule().getSchedule().values())
+		{
+			if(s.overlaps(comp))
+			{
+				return true;
+			}
+		}
+		
+		return false;
 	}
 	
 	public void assignFacilityToUse(Facility f, UseRequest ur)
