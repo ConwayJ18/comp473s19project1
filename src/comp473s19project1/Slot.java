@@ -6,6 +6,7 @@ public class Slot
 	Time startTime;
 	Time endTime;
 	Duration duration;
+	Date date;
 	
 	public Slot() {}
 	
@@ -22,6 +23,11 @@ public class Slot
 		this.duration = new Duration(startTime, endTime);
 	}
 	
+	/**
+	 * @param days
+	 * @param startTime
+	 * @param duration
+	 */
 	public Slot(Days days, Time startTime, Duration duration)
 	{
 		this.days = days;
@@ -29,7 +35,33 @@ public class Slot
 		this.duration = duration;
 		this.endTime = new Time(duration.getDurationInMinutes()/60, duration.getDurationInMinutes()%60);
 	}
-
+	
+	/**
+	 * @param date
+	 * @param startTime
+	 * @param endTime
+	 */
+	public Slot(Date date, Time startTime, Time endTime)
+	{
+		this.date = date;
+		this.startTime = startTime;
+		this.endTime = endTime;
+		this.duration = new Duration(startTime, endTime);
+	}
+	
+	/**
+	 * @param date
+	 * @param startTime
+	 * @param duration
+	 */
+	public Slot(Date date, Time startTime, Duration duration)
+	{
+		this.date = date;
+		this.startTime = startTime;
+		this.duration = duration;
+		this.endTime = new Time(duration.getDurationInMinutes()/60, duration.getDurationInMinutes()%60);
+	}
+	
 	/**
 	 * @return the days
 	 */
@@ -94,6 +126,22 @@ public class Slot
 		this.duration = duration;
 	}
 	
+	/**
+	 * @return the date
+	 */
+	public Date getDate()
+	{
+		return date;
+	}
+
+	/**
+	 * @param date the date to set
+	 */
+	public void setDate(Date date)
+	{
+		this.date = date;
+	}
+
 	//Recalculate the duration based on startTime and endTime
 	public void calculateDuration()
 	{
