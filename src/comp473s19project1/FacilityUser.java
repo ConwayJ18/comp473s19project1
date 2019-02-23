@@ -4,7 +4,7 @@ public class FacilityUser
 {
 	String userID;
 	String userName;
-	String userPhone;
+	long userPhone;
 	String userEmail;
 	String userRole;
 	
@@ -17,7 +17,7 @@ public class FacilityUser
 	 * @param userEmail
 	 * @param userRole
 	 */
-	public FacilityUser(String userID, String userName, String userPhone, String userEmail, String userRole) {
+	public FacilityUser(String userID, String userName, long userPhone, String userEmail, String userRole) {
 		this.userID = userID;
 		this.userName = userName;
 		this.userPhone = userPhone;
@@ -56,14 +56,14 @@ public class FacilityUser
 	/**
 	 * @return the userPhone
 	 */
-	public String getUserPhone() {
+	public long getUserPhone() {
 		return userPhone;
 	}
 
 	/**
 	 * @param userPhone the userPhone to set
 	 */
-	public void setUserPhone(String userPhone) {
+	public void setUserPhone(long userPhone) {
 		this.userPhone = userPhone;
 	}
 
