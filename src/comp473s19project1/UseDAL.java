@@ -55,6 +55,19 @@ public class UseDAL
 	//TODO
 	public Object calcUsageRate(Facility f)
 	{
-		return null;
+		int totalMinutesInUse = 0;
+		for(Slot s : Database.db.get(f).getFacilityUse().getSchedule().getSchedule().values())
+		{
+			if(s.getDays().equals(null))
+			{
+				totalMinutesInUse += s.getDuration().getDurationInMinutes()*
+			}
+			else
+			{
+				
+			}
+		}
+		
+		return false;
 	}
 }

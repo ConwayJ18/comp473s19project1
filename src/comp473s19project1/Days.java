@@ -155,4 +155,26 @@ public class Days
 		
 		return false;
 	}
+	
+	public int totalDaysInUse()
+	{
+		int totalDays = 0;
+		
+		if(this.isM())
+			totalDays++;
+		if(this.isT())
+			totalDays++;
+		if(this.isW())
+			totalDays++;
+		if(this.isR())
+			totalDays++;
+		if(this.isF())
+			totalDays++;
+		if(this.isA())
+			totalDays++;
+		if(this.isU())
+			totalDays++;
+		
+		return totalDays;
+	}
 }
