@@ -4,10 +4,5 @@ import java.util.HashMap;
 
 public class Database
 {
-	static HashMap<Facility, Facility> FacilitiesList;
-	
-	public Database()
-	{
-		FacilitiesList = new HashMap<Facility, Facility>();
-	}
+	public static HashMap<Facility, Facility> db = new HashMap<Facility, Facility>();
 }
