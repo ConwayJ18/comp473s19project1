@@ -2,43 +2,46 @@ package comp473s19project1;
 
 public class MaintenanceDAL
 {
-	public Object makeFacilityMaintRequest()
+	public void makeFacilityMaintRequest(Facility f, MaintenanceRequest mr)
 	{
-		return null;
+		Database.db.get(f).getFacilityMaintenance().addMaintReq(mr);
 	}
 	
-	public Object scheduleMaintenance()
+	public void scheduleMaintenance(Facility f, MaintenanceOrder mo, Slot s)
 	{
-		return null;
+		Database.db.get(f).getFacilityMaintenance().addOrderToSchedule(mo, s);
 	}
 	
-	public Object calcMaintenanceCostForFacility()
+	//TODO
+	public int calcMaintenanceCostForFacility(Facility f)
 	{
-		return null;
+		return 0;
 	}
 	
-	public Object calcProblemRateForFacility()
+	//TODO
+	public int calcProblemRateForFacility(Facility f)
 	{
-		return null;
+		return 0;
 	}
 	
-	public Object calcDownTimeForFacility()
+	//TODO
+	public int calcDownTimeForFacility(Facility f)
 	{
-		return null;
+		return 0;
 	}
 	
-	public Object listMaintRequests()
+	public static Object listMaintRequests(Facility f)
 	{
-		return null;
+		return Database.db.get(f).getFacilityMaintenance().getMaintReqs();
 	}
 	
-	public Object listMaintenance()
+	public static Object listMaintenance(Facility f)
 	{
-		return null;
+		return Database.db.get(f).getFacilityMaintenance().getMaintLog();
 	}
 	
-	public Object listFacilityProblems()
+	public static Object listFacilityProblems(Facility f)
 	{
-		return null;
+		return Database.db.get(f).getFacilityMaintenance().getMaintSchedule();
 	}
 }
