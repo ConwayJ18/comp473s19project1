@@ -143,4 +143,16 @@ public class Days
 	{
 		this.u = u;
 	}
+	
+	public boolean overlaps(Days d)
+	{
+		if(this.isM() == d.isM() || this.isT() == d.isT() || this.isW() == d.isW()
+		|| this.isR() == d.isR() || this.isF() == d.isF() || this.isA() == d.isA()
+		|| this.isU() == d.isU())
+		{
+			return true;
+		}
+		
+		return false;
+	}
 }

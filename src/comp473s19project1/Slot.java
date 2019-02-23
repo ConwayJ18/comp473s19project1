@@ -153,4 +153,21 @@ public class Slot
 	{
 		this.endTime = new Time(duration.getDurationInMinutes()/60, duration.getDurationInMinutes()%60);
 	}
+	
+	public boolean overlaps(Slot s)
+	{
+		if(this.getDate().equals(s.getDate()) || this.getDays().overlaps(s.getDays()))
+		{
+			if((this.getStartTime().getFourDigitTime() <= s.getStartTime().getFourDigitTime()
+					&& this.getEndTime().getFourDigitTime() >= s.getStartTime().getFourDigitTime())
+				|| (this.getStartTime().getFourDigitTime() <= s.getEndTime().getFourDigitTime()
+					&& this.getEndTime().getFourDigitTime() >= s.getEndTime().getFourDigitTime())
+				|| (this.getStartTime().getFourDigitTime() <= s.getStartTime().getFourDigitTime()
+					&& this.getEndTime().getFourDigitTime() >= s.getEndTime().getFourDigitTime()))
+				{
+					return true;
+				}
+		}
+		return false;
+	}
 }
