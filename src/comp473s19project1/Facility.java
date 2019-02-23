@@ -10,4 +10,6 @@ public interface Facility
 	void setFacilityUse(FacilityUse use);
 	FacilityMaintenance getFacilityMaintenance();
 	void setFacilityMaintenance(FacilityMaintenance maintenance);
+	Inspection getInspection();
+	void setInspection(Inspection inspection);
 }

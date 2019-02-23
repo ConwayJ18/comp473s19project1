@@ -6,6 +6,7 @@ public class Building implements Facility
 	FacilityDetail detail;
 	FacilityUse use;
 	FacilityMaintenance maintenance;
+	Inspection inspection;
 
 	Building(){}
 	
@@ -16,11 +17,13 @@ public class Building implements Facility
 	 * @param maintenance
 	 */
 	public Building(FacilityLocation location, FacilityDetail detail, FacilityUse use,
-			FacilityMaintenance maintenance) {
+			FacilityMaintenance maintenance, Inspection inspection)
+	{
 		this.location = location;
 		this.detail = detail;
 		this.use = use;
 		this.maintenance = maintenance;
+		this.inspection = inspection;
 	}
 
 	/**
@@ -93,5 +96,23 @@ public class Building implements Facility
 	public void setFacilityMaintenance(FacilityMaintenance maintenance)
 	{
 		this.maintenance = maintenance;
+	}
+
+	/**
+	 * @return the inspection
+	 */
+	@Override
+	public Inspection getInspection()
+	{
+		return inspection;
+	}
+
+	/**
+	 * @param inspection the inspection to set
+	 */
+	@Override
+	public void setInspection(Inspection inspection)
+	{
+		this.inspection = inspection;
 	}
 }
