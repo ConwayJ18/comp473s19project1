@@ -1,34 +1,39 @@
 package comp473s19project1;
 
+import java.util.Collection;
+
 public class FacilityDAL
 {
-	public Object listFacilities()
+	public FacilityDAL() {}
+	
+	public Collection<Facility> listFacilities()
 	{
-		return null;
+		return Database.db.values();
 	}
 	
-	public Object getFacilityInformation(Facility f)
+	public FacilityDetail getFacilityInformation(Facility f)
 	{
-		return null;
+		return Database.db.get(f).getFacilityDetail();
 	}
 	
-	public Object requestAvailableCapacity(Facility f)
+	public int requestAvailableCapacity(Facility f)
 	{
-		return null;
+		return Database.db.get(f).getFacilityDetail().getCapacity();
 	}
 	
-	public Object addNewFacility(Facility f)
+	public Facility addNewFacility(Facility f)
 	{
-		return null;
+		Database.db.put(f, f);
+		return Database.db.get(f);
 	}
 	
 	public void addFacilityDetail(Facility f, FacilityDetail fd)
 	{
-		
+		Database.db.get(f).setFacilityDetail(fd);
 	}
 	
-	public Object removeFacility(Facility f)
+	public void removeFacility(Facility f)
 	{
-		return null;
+		Database.db.remove(f);
 	}
 }
