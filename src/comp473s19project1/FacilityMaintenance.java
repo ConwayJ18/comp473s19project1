@@ -10,6 +10,20 @@ public class FacilityMaintenance
 	FacilityMaintenance(){}
 
 	/**
+	 * @param maintSchedule
+	 * @param maintOrder
+	 * @param maintLog
+	 * @param maintReq
+	 */
+	public FacilityMaintenance(MaintenanceSchedule maintSchedule, MaintenanceOrder maintOrder, MaintenanceLog maintLog,
+			MaintenanceRequest maintReq) {
+		this.maintSchedule = maintSchedule;
+		this.maintOrder = maintOrder;
+		this.maintLog = maintLog;
+		this.maintReq = maintReq;
+	}
+
+	/**
 	 * @return the maintSchedule
 	 */
 	public MaintenanceSchedule getMaintSchedule() {
