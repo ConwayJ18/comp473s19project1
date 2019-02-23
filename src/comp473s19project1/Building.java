@@ -1,12 +1,14 @@
 package comp473s19project1;
 
+import java.util.ArrayList;
+
 public class Building implements Facility
 {
 	FacilityLocation location;
 	FacilityDetail detail;
 	FacilityUse use;
 	FacilityMaintenance maintenance;
-	Inspection inspection;
+	ArrayList<Inspection> inspections;
 
 	Building(){}
 	
@@ -17,13 +19,13 @@ public class Building implements Facility
 	 * @param maintenance
 	 */
 	public Building(FacilityLocation location, FacilityDetail detail, FacilityUse use,
-			FacilityMaintenance maintenance, Inspection inspection)
+			FacilityMaintenance maintenance)
 	{
 		this.location = location;
 		this.detail = detail;
 		this.use = use;
 		this.maintenance = maintenance;
-		this.inspection = inspection;
+		this.inspections = new ArrayList<Inspection>();
 	}
 
 	/**
@@ -102,17 +104,17 @@ public class Building implements Facility
 	 * @return the inspection
 	 */
 	@Override
-	public Inspection getInspection()
+	public ArrayList<Inspection> getInspections()
 	{
-		return inspection;
+		return inspections;
 	}
 
 	/**
 	 * @param inspection the inspection to set
 	 */
 	@Override
-	public void setInspection(Inspection inspection)
+	public void addInspection(Inspection inspection)
 	{
-		this.inspection = inspection;
+		inspections.add(inspection);
 	}
 }

@@ -1,5 +1,7 @@
 package comp473s19project1;
 
+import java.util.ArrayList;
+
 public interface Facility
 {
 	FacilityLocation getFacilityLocation();
@@ -10,6 +12,6 @@ public interface Facility
 	void setFacilityUse(FacilityUse use);
 	FacilityMaintenance getFacilityMaintenance();
 	void setFacilityMaintenance(FacilityMaintenance maintenance);
-	Inspection getInspection();
-	void setInspection(Inspection inspection);
+	ArrayList<Inspection> getInspections();
+	void addInspection(Inspection inspection);
 }
