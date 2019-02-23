@@ -1,33 +1,37 @@
 package comp473s19project1;
 
+import java.util.ArrayList;
+
 public class UseDAL
 {
-	public Object isInUseDuringInterval()
+	//TODO
+	public Object isInUseDuringInterval(Facility f, Date d, Time start, Time end)
 	{
 		return null;
 	}
 	
-	public Object assignFacilityToUse()
+	public void assignFacilityToUse(Facility f, UseRequest ur)
 	{
-		return null;
+		Database.db.get(f).getFacilityUse().getSchedule().getSchedule().put(ur, ur.getTimeslot());
 	}
 	
-	public Object vacateFacility()
+	public void vacateFacility(Facility f)
 	{
-		return null;
+		Database.db.get(f).getFacilityUse().getSchedule().getSchedule().clear();
 	}
 	
-	public Object listInspections()
+	public ArrayList<Inspection> listInspections(Facility f)
 	{
-		return null;
+		return Database.db.get(f).getInspections();
 	}
 	
-	public Object listActualUsage()
+	public UseSchedule listActualUsage(Facility f)
 	{
-		return null;
+		return Database.db.get(f).getFacilityUse().getSchedule();
 	}
 	
-	public Object calcUsageRate()
+	//TODO
+	public Object calcUsageRate(Facility f)
 	{
 		return null;
 	}

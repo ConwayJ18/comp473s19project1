@@ -1,9 +1,11 @@
 package comp473s19project1;
 
+import java.util.ArrayList;
+
 public class FacilityUse
 {
-	FacilityUser user;
-	UseSchedule schedule;
+	private ArrayList<UseRequest> requests;
+	private UseSchedule schedule;
 	
 	public FacilityUse() {}
 	
@@ -11,26 +13,26 @@ public class FacilityUse
 	 * @param user
 	 * @param schedule
 	 */
-	public FacilityUse(FacilityUser user, UseSchedule schedule)
+	public FacilityUse(UseSchedule schedule)
 	{
-		this.user = user;
+		this.requests = new ArrayList<UseRequest>();
 		this.schedule = schedule;
 	}
 
 	/**
 	 * @return the user
 	 */
-	public FacilityUser getUser()
+	public ArrayList<UseRequest> getRequests()
 	{
-		return user;
+		return requests;
 	}
 
 	/**
 	 * @param user the user to set
 	 */
-	public void setUser(FacilityUser user)
+	public void addRequest(UseRequest request)
 	{
-		this.user = user;
+		requests.add(request);
 	}
 
 	/**
