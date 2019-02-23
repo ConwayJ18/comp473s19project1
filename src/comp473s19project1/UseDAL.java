@@ -52,22 +52,23 @@ public class UseDAL
 		return Database.db.get(f).getFacilityUse().getSchedule();
 	}
 	
-	//TODO
-	public Object calcUsageRate(Facility f)
+	public double calcUsageRate(Facility f)
 	{
 		int totalMinutesInUse = 0;
+		double usageRate;
 		for(Slot s : Database.db.get(f).getFacilityUse().getSchedule().getSchedule().values())
 		{
 			if(s.getDays().equals(null))
 			{
-				totalMinutesInUse += s.getDuration().getDurationInMinutes()*
+				totalMinutesInUse += s.getDuration().getDurationInMinutes()*s.getDays().totalDaysInUse();
 			}
 			else
 			{
-				
+				totalMinutesInUse += s.getDuration().getDurationInMinutes();
 			}
 		}
+		usageRate = totalMinutesInUse/10080;
 		
-		return false;
+		return usageRate;
 	}
 }
