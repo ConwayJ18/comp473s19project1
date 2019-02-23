@@ -2,8 +2,10 @@ package comp473s19project1;
 
 import java.util.ArrayList;
 
-public class UseDAL
+public class UseDAO
 {
+	public UseDAO() {}
+	
 	public boolean isInUseDuringInterval(Facility f, Date d, Time start, Time end)
 	{
 		Slot comp = new Slot(d, start, end);

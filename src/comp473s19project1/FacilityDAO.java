@@ -2,9 +2,9 @@ package comp473s19project1;
 
 import java.util.Collection;
 
-public class FacilityDAL
+public class FacilityDAO
 {
-	public FacilityDAL() {}
+	public FacilityDAO() {}
 	
 	public Collection<Facility> listFacilities()
 	{

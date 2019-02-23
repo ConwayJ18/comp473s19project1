@@ -52,7 +52,7 @@ public class FacilityDriver
 		 */
 		
 		//Begin FacilityDAL tests
-		FacilityDAL fClient = new FacilityDAL();
+		FacilityDAO fClient = new FacilityDAO();
 		fClient.addNewFacility(f1);
 		fClient.addFacilityDetail(f1, fd1);
 		fClient.listFacilities();
@@ -63,7 +63,7 @@ public class FacilityDriver
 		//Begin UseDAL tests
 		f1.addInspection(i1);
 		fClient.addNewFacility(f1);
-		UseDAL uClient = new UseDAL();
+		UseDAO uClient = new UseDAO();
 		uClient.isInUseDuringInterval(f1, d2, start2, end2);
 		uClient.assignFacilityToUse(f1, ur1);
 		uClient.vacateFacility(f1);
@@ -73,7 +73,7 @@ public class FacilityDriver
 		//End UseDAL tests
 		
 		//Begin MaintenanceDAL tests
-		MaintenanceDAL mClient = new MaintenanceDAL();
+		MaintenanceDAO mClient = new MaintenanceDAO();
 		mClient.makeFacilityMaintRequest(f1, mr1);
 		mClient.scheduleMaintenance(f1, mo1, s4);
 		mClient.calcMaintenanceCostForFacility(f1);

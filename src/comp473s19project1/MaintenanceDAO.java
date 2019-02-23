@@ -2,8 +2,10 @@ package comp473s19project1;
 
 import java.util.ArrayList;
 
-public class MaintenanceDAL
+public class MaintenanceDAO
 {
+	public MaintenanceDAO() {}
+	
 	public void makeFacilityMaintRequest(Facility f, MaintenanceRequest mr)
 	{
 		Database.db.get(f).getFacilityMaintenance().addMaintReq(mr);
