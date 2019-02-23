@@ -1,13 +1,13 @@
 package comp473s19project1;
 
+import java.util.ArrayList;
+
 public class FacilityMaintenance
 {
 	MaintenanceSchedule maintSchedule;
-	MaintenanceOrder maintOrder;
+	ArrayList<MaintenanceOrder> maintOrders;
 	MaintenanceLog maintLog;
-	MaintenanceRequest maintReq;
-	
-	FacilityMaintenance(){}
+	ArrayList<MaintenanceRequest> maintRequests;
 
 	/**
 	 * @param maintSchedule
@@ -15,69 +15,79 @@ public class FacilityMaintenance
 	 * @param maintLog
 	 * @param maintReq
 	 */
-	public FacilityMaintenance(MaintenanceSchedule maintSchedule, MaintenanceOrder maintOrder, MaintenanceLog maintLog,
-			MaintenanceRequest maintReq) {
-		this.maintSchedule = maintSchedule;
-		this.maintOrder = maintOrder;
-		this.maintLog = maintLog;
-		this.maintReq = maintReq;
+	public FacilityMaintenance(MaintenanceSchedule schedule, MaintenanceLog log)
+	{
+		this.maintSchedule = schedule;
+		this.maintOrders = new ArrayList<MaintenanceOrder>();
+		this.maintLog = log;
+		this.maintRequests = new ArrayList<MaintenanceRequest>();
 	}
 
 	/**
 	 * @return the maintSchedule
 	 */
-	public MaintenanceSchedule getMaintSchedule() {
+	public MaintenanceSchedule getMaintSchedule()
+	{
 		return maintSchedule;
 	}
-
+	
 	/**
 	 * @param maintSchedule the maintSchedule to set
 	 */
-	public void setMaintSchedule(MaintenanceSchedule maintSchedule) {
+	public void setMaintenanceSchedule(MaintenanceSchedule maintSchedule)
+	{
 		this.maintSchedule = maintSchedule;
 	}
-
+	
 	/**
 	 * @return the maintOrder
 	 */
-	public MaintenanceOrder getMaintOrder() {
-		return maintOrder;
+	public ArrayList<MaintenanceOrder> getMaintOrders()
+	{
+		return maintOrders;
 	}
-
-	/**
-	 * @param maintOrder the maintOrder to set
-	 */
-	public void setMaintOrder(MaintenanceOrder maintOrder) {
-		this.maintOrder = maintOrder;
-	}
-
+	
 	/**
 	 * @return the maintLog
 	 */
-	public MaintenanceLog getMaintLog() {
+	public MaintenanceLog getMaintLog()
+	{
 		return maintLog;
-	}
-
-	/**
-	 * @param maintLog the maintLog to set
-	 */
-	public void setMaintLog(MaintenanceLog maintLog) {
-		this.maintLog = maintLog;
 	}
 
 	/**
 	 * @return the maintReq
 	 */
-	public MaintenanceRequest getMaintReq() {
-		return maintReq;
+	public ArrayList<MaintenanceRequest> getMaintReqs() {
+		return maintRequests;
 	}
-
+	
 	/**
 	 * @param maintReq the maintReq to set
 	 */
-	public void setMaintReq(MaintenanceRequest maintReq) {
-		this.maintReq = maintReq;
+	public void addMaintReq(MaintenanceRequest maintReq) {
+		maintRequests.add(maintReq);
 	}
 	
-	
+	/**
+	 * @param maintOrder the maintOrder to add
+	 */
+	public void addOrderToSchedule(MaintenanceOrder maintOrder, Slot timeSlot) {
+		maintSchedule.getSchedule().put(maintOrder, timeSlot);
+	}
+
+	/**
+	 * @param maintOrder the maintOrder to set
+	 */
+	public void addMaintOrder(MaintenanceOrder maintOrder) {
+		maintOrders.add(maintOrder);
+	}
+
+	/**
+	 * @param maintOrder the maintOrder to add
+	 */
+	public void addOrderToLog(MaintenanceOrder maintOrder) {
+		maintLog.getLog().put(maintOrder, maintSchedule.getSchedule().get(maintOrder));
+		maintSchedule.getSchedule().remove(maintOrder);
+	}
 }
