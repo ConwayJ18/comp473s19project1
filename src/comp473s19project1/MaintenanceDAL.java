@@ -1,5 +1,7 @@
 package comp473s19project1;
 
+import java.util.ArrayList;
+
 public class MaintenanceDAL
 {
 	public void makeFacilityMaintRequest(Facility f, MaintenanceRequest mr)
@@ -30,17 +32,17 @@ public class MaintenanceDAL
 		return 0;
 	}
 	
-	public static Object listMaintRequests(Facility f)
+	public ArrayList<MaintenanceRequest> listMaintRequests(Facility f)
 	{
 		return Database.db.get(f).getFacilityMaintenance().getMaintReqs();
 	}
 	
-	public static Object listMaintenance(Facility f)
+	public ArrayList<MaintenanceOrder> listMaintenance(Facility f)
 	{
-		return Database.db.get(f).getFacilityMaintenance().getMaintLog();
+		return Database.db.get(f).getFacilityMaintenance().getMaintOrders();
 	}
 	
-	public static Object listFacilityProblems(Facility f)
+	public MaintenanceSchedule listFacilityProblems(Facility f)
 	{
 		return Database.db.get(f).getFacilityMaintenance().getMaintSchedule();
 	}
