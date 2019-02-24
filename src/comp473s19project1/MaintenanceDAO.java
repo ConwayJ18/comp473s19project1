@@ -73,10 +73,20 @@ public class MaintenanceDAO
 		return totalProblems + " since " + oldestDate.toString();
 	}
 	
-	//TODO
 	public int calcDownTimeForFacility(Facility f)
 	{
-		return 0;
+		int downtime = 0;
+		for(Slot s : Database.db.get(f).getFacilityMaintenance().getMaintSchedule().getSchedule().values())
+		{
+			downtime += s.getDuration().getDurationInMinutes();
+		}
+		
+		for(Slot s : Database.db.get(f).getFacilityMaintenance().getMaintLog().getLog().values())
+		{
+			downtime += s.getDuration().getDurationInMinutes();
+		}
+		
+		return downtime;
 	}
 	
 	public ArrayList<MaintenanceRequest> listMaintRequests(Facility f)
