@@ -68,5 +68,45 @@ public class Date
 		this.year = year;
 	}
 	
+	public boolean isOlderThan(Date d)
+	{
+		if(this.getYear() < d.getYear())
+		{
+			return true;
+		}
+		else if(this.getYear() > d.getYear())
+		{
+			return false;
+		}
+		else
+		{
+			if(this.getMonth() < d.getMonth())
+			{
+				return true;
+			}
+			else if(this.getMonth() > d.getMonth())
+			{
+				return false;
+			}
+			else
+			{
+				if(this.getDay() < d.getDay())
+				{
+					return true;
+				}
+				else if(this.getDay() > d.getDay())
+				{
+					return false;
+				}
+			}
+		}
+		
+		return true;
+	}
 	
+	@Override
+	public String toString()
+	{
+		return this.getDay() + "/" + this.getMonth() + "/" + this.getYear();
+	}
 }

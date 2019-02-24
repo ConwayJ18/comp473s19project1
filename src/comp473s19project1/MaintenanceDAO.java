@@ -15,8 +15,7 @@ public class MaintenanceDAO
 	{
 		Database.db.get(f).getFacilityMaintenance().addOrderToSchedule(mo, s);
 	}
-	
-	//TODO
+
 	public int calcMaintenanceCostForFacility(Facility f)
 	{
 		int totalCost = 0;
@@ -39,10 +38,39 @@ public class MaintenanceDAO
 		return totalCost;
 	}
 	
-	//TODO
-	public int calcProblemRateForFacility(Facility f)
+	public String calcProblemRateForFacility(Facility f)
 	{
-		return 0;
+		int totalProblems = 0;
+		Date oldestDate = new Date();
+		
+		for(MaintenanceOrder o : Database.db.get(f).getFacilityMaintenance().getMaintOrders())
+		{
+			if(o.getRequestDate().isOlderThan(oldestDate))
+			{
+				oldestDate = o.getRequestDate();
+			}
+			totalProblems++;
+		}
+		
+		for(MaintenanceOrder o : Database.db.get(f).getFacilityMaintenance().getMaintSchedule().getSchedule().keySet())
+		{
+			if(o.getRequestDate().isOlderThan(oldestDate))
+			{
+				oldestDate = o.getRequestDate();
+			}
+			totalProblems++;
+		}
+		
+		for(MaintenanceOrder o : Database.db.get(f).getFacilityMaintenance().getMaintLog().getLog().keySet())
+		{
+			if(o.getRequestDate().isOlderThan(oldestDate))
+			{
+				oldestDate = o.getRequestDate();
+			}
+			totalProblems++;
+		}
+		
+		return totalProblems + " since " + oldestDate.toString();
 	}
 	
 	//TODO
