@@ -19,7 +19,24 @@ public class MaintenanceDAO
 	//TODO
 	public int calcMaintenanceCostForFacility(Facility f)
 	{
-		return 0;
+		int totalCost = 0;
+		
+		for(MaintenanceOrder o : Database.db.get(f).getFacilityMaintenance().getMaintOrders())
+		{
+			totalCost += o.getCost();
+		}
+		
+		for(MaintenanceOrder o : Database.db.get(f).getFacilityMaintenance().getMaintSchedule().getSchedule().keySet())
+		{
+			totalCost += o.getCost();
+		}
+		
+		for(MaintenanceOrder o : Database.db.get(f).getFacilityMaintenance().getMaintLog().getLog().keySet())
+		{
+			totalCost += o.getCost();
+		}
+		
+		return totalCost;
 	}
 	
 	//TODO

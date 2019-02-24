@@ -74,6 +74,7 @@ public class FacilityMaintenance
 	 */
 	public void addOrderToSchedule(MaintenanceOrder maintOrder, Slot timeSlot) {
 		maintSchedule.getSchedule().put(maintOrder, timeSlot);
+		maintOrders.remove(maintOrder);
 	}
 
 	/**
