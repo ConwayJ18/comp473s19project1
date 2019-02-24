@@ -2,11 +2,11 @@ package comp473s19project1;
 
 public class Slot
 {
-	Days days;
-	Time startTime;
-	Time endTime;
-	Duration duration;
-	Date date;
+	private Days days;
+	private Time startTime;
+	private Time endTime;
+	private Duration duration;
+	private Date date;
 	
 	public Slot() {}
 	

@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class Building implements Facility
 {
-	FacilityLocation location;
-	FacilityDetail detail;
-	FacilityUse use;
-	FacilityMaintenance maintenance;
-	ArrayList<Inspection> inspections;
+	private FacilityLocation location;
+	private FacilityDetail detail;
+	private FacilityUse use;
+	private FacilityMaintenance maintenance;
+	private ArrayList<Inspection> inspections;
 
 	Building(){}
 	

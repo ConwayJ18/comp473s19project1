@@ -2,13 +2,13 @@ package comp473s19project1;
 
 public class Days
 {
-	boolean m; //Monday
-	boolean t; //Tuesday
-	boolean w; //Wednesday
-	boolean r; //Thursday
-	boolean f; //Friday
-	boolean a; //Saturday
-	boolean u; //Sunday
+	private boolean m; //Monday
+	private boolean t; //Tuesday
+	private boolean w; //Wednesday
+	private boolean r; //Thursday
+	private boolean f; //Friday
+	private boolean a; //Saturday
+	private boolean u; //Sunday
 	
 	public Days() {}
 	

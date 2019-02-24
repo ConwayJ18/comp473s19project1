@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 public class FacilityMaintenance
 {
-	MaintenanceSchedule maintSchedule;
-	ArrayList<MaintenanceOrder> maintOrders;
-	MaintenanceLog maintLog;
-	ArrayList<MaintenanceRequest> maintRequests;
+	private MaintenanceSchedule maintSchedule;
+	private ArrayList<MaintenanceOrder> maintOrders;
+	private MaintenanceLog maintLog;
+	private ArrayList<MaintenanceRequest> maintRequests;
 
 	/**
 	 * @param maintSchedule

@@ -2,8 +2,8 @@ package comp473s19project1;
 
 public class Inspection
 {
-	String inspectionType;
-	Slot slot;
+	private String inspectionType;
+	private Slot slot;
 	
 	public Inspection() {}
 

@@ -2,9 +2,9 @@ package comp473s19project1;
 
 public class Date
 {
-	int month;
-	int day;
-	int year;
+	private int month;
+	private int day;
+	private int year;
 	
 	public Date() {}
 	

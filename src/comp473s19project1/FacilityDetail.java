@@ -2,10 +2,10 @@ package comp473s19project1;
 
 public class FacilityDetail
 {
-	int id;
-	String name;
-	int capacity;
-	int squareFeet;
+	private int id;
+	private String name;
+	private int capacity;
+	private int squareFeet;
 	
 	FacilityDetail(){}
 

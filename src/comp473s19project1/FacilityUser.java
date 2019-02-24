@@ -2,11 +2,11 @@ package comp473s19project1;
 
 public class FacilityUser
 {
-	String userID;
-	String userName;
-	long userPhone;
-	String userEmail;
-	String userRole;
+	private String userID;
+	private String userName;
+	private long userPhone;
+	private String userEmail;
+	private String userRole;
 	
 	public FacilityUser() {}
 	

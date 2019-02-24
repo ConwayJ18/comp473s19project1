@@ -2,7 +2,7 @@ package comp473s19project1;
 
 public class Duration
 {
-	int durationInMinutes;
+	private int durationInMinutes;
 	
 	public Duration() {}
 

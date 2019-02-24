@@ -2,8 +2,8 @@ package comp473s19project1;
 
 public class Time
 {
-	int hour;
-	int minute;
+	private int hour;
+	private int minute;
 	
 	public Time() {}
 	

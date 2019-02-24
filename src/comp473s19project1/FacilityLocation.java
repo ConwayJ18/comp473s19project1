@@ -2,13 +2,13 @@ package comp473s19project1;
 
 public class FacilityLocation
 {
-	int addressNumber;
-	String directional;
-	String streetName;
-	String city;
-	String state;
-	int zip;
-	String country;
+	private int addressNumber;
+	private String directional;
+	private String streetName;
+	private String city;
+	private String state;
+	private int zip;
+	private String country;
 	
 	FacilityLocation(){}
 	
